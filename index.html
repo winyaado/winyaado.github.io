@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ぬこ ポートフォリオ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/omikuji.css">
+</head>
+
+<body>
+    <!-- デスクトップ -->
+    <div class="desktop">
+        <div class="icon" data-window="profile">
+            <img src="img/profile.png" alt="">
+            <span>プロフィール</span>
+        </div>
+
+        <div class="icon" data-window="skills">
+            <img src="img/skills.png" alt="">
+            <span>所有スキル</span>
+        </div>
+
+        <div class="icon" data-window="works">
+            <img src="img/works.png" alt="">
+            <span>活動内容</span>
+        </div>
+
+        <div class="icon" data-window="contact">
+            <img src="img/contact.png" alt="">
+            <span>連絡先</span>
+        </div>
+
+        <div class="icon-space"></div>
+
+        <div class="icon" data-window="photo">
+            <img src="img/photo.png" alt="">
+            <span>フォト</span>
+        </div>
+
+        <div class="icon" data-window="omikuji">
+            <img src="img/omikuji.png" alt="">
+            <span>おみくじ</span>
+        </div>
+    </div>
+
+    <!-- 以下 ウインドウ html -->
+    <!-- プロフィール -->
+    <div class="win32-window" id="profile" style="width: 660px; height: 320px; top: 120px; left: 120px; display: block;">
+        <div class="title-bar">
+            <span class="title">プロフィール</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <br><br>
+            <div class="profile-wrapper">
+                <div class="profile-left">
+                    <img src="img/profile_icon.jpg" alt="profile-icon" class="profile-icon">
+                </div>
+
+                <div class="profile-right">
+                    <h2>ぬこ</h2>
+                    <p>病院SE / ZEN大学 学生</p><br>
+
+                    <p>
+                        医療現場で働きながら、日々の “ちょっと不便” を技術でそっと解決。
+                    </p>
+
+                    <p>
+                        Webアプリの制作や自動化ツールづくり、
+                        Discord Bot やOCRなど、気になった技術はすぐ触ってみるタイプです。
+                    </p>
+
+                    <br><p class="small">
+                        趣味：PCゲーム、写真、ガジェット,ぬいぐるみ集め
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- スキル -->
+    <div class="win32-window" id="skills" style="width: 500px; height: 700px; top: 160px; left: 620px; display: block;">
+        <div class="title-bar">
+            <span class="title">所有スキル</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <h1>所有スキル</h1>
+            <hr>
+
+            <h2>■ 言語・フレームワーク</h2>
+            <ul>
+                <li>Python（discord.py / EasyOCR / Watchdog）</li>
+                <li>HTML / CSS / JavaScript</li>
+                <li>VBA（Excelフォーム / 業務効率化）</li>
+            </ul>
+
+            <h2>■ データベース・バックエンド</h2>
+            <ul>
+                <li>Supabase（認証 / DB / ストレージ）</li>
+                <li>Microsoft SQL Server</li>
+                <li>API連携（RCON / REST API）</li>
+            </ul>
+
+            <h2>■ サーバー・インフラ</h2>
+            <ul>
+                <li>Docker版 Apache Guacamole によるリモートワーク環境構築</li>
+                <li>RDP / SSH / VNC の統合管理</li>
+                <li>Linuxサーバー操作（systemd / firewall / SSH）</li>
+            </ul>
+
+            <h2>■ AI / 機械学習</h2>
+            <ul>
+                <li><a href="https://note.com/matsuolab/n/n753daf2f93de" target="_blank">松尾研究所 GCI 2025 Summer</a> 修了</li>
+                <li>松尾研究所 Deep Learning 基礎講座 2025 Spring 修了</li>
+            </ul>
+
+            <h2>■ 言語・環境</h2>
+            <ul>
+                <li>Python（自動化 / OCR / Bot開発）</li>
+                <li>Unity（VRCギミック制作）</li>
+                <li>Visual Studio Code / GitHub</li>
+                <li>PowerShell / Excel VBA</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- フォト -->
+    <div class="win32-window" id="photo" style="width: 900px; height: 600px;">
+        <div class="title-bar">
+            <span class="title">写真ビューア</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+
+        <div class="window-content photo-content">
+            <!-- 左：選択された大写真 -->
+            <div class="photo-view">
+                <img id="photo-main" src="img/photo/photo1.jpg" alt="">
+            </div>
+
+            <!-- 右：サムネイルリスト -->
+            <div class="photo-list">
+                <img class="thumb" src="img/photo/photo1.jpg" data-full="img/photo/photo1.jpg">
+                <img class="thumb" src="img/photo/photo2.jpg" data-full="img/photo/photo2.jpg">
+                <img class="thumb" src="img/photo/photo3.jpg" data-full="img/photo/photo3.jpg">
+                <img class="thumb" src="img/photo/photo4.jpg" data-full="img/photo/photo4.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- 活動内容 -->
+    <div class="win32-window" id="works" style="width: 300px; height: 400px;">
+        <div class="title-bar">
+            <span class="title">活動内容</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="works-list">
+                <b>■ 制作物</b>
+                <div class="work-item">
+                    <div>
+                        <a href="https://github.com/winyaado/NotReloadAddon" target="_blank">
+                            NotReload
+                        </a><br>
+                        <span class="desc">ライブ授業中の誤リロード防止アドオン</span>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <a href="https://github.com/winyaado/ZenPlanner" target="_blank">
+                            ZenPlanner
+                        </a><br>
+                        <span class="desc">単位認定試験スケジューラー</span>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div>
+                        <a href="https://github.com/winyaado/zen_StudyZenith" target="_blank">
+                            StudyZenith
+                        </a><br>
+                        <span class="desc">卒業要件確認アプリ</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <b>■ 外部リンク</b>
+                <a href="https://github.com/winyaado" target="_blank">GitHub</a>
+                <a href="https://qiita.com/winyaado" target="_blank">Qiita</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 連絡先 -->
+    <div class="win32-window" id="contact" style="width: 900px; height: 600px;">
+        <div class="title-bar">
+            <span class="title">連絡先</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <div class="dos-contact">
+                ────────────────────────────<br>
+                ■ E-mail<br>
+                251zs03298@student.zen.ac.jp<br>
+                <br>
+                ■ X(Twitter)<br>
+                <a href="https://x.com/nuko4423" target="_blank">https://x.com/nuko4423</a><br>
+                ────────────────────────────<br>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- おみくじ -->
+    <div class="win32-window" id="omikuji" style="width: 600px; height: 300px; top: 460px; left: 1220px; display: block;">
+        <div class="title-bar">
+            <span class="title">おみくじ</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <div class="omikuji">
+                <h1>あなたの今日の運勢は?</h1>
+                <p>名前を入れて下さい</p>
+                <input type="text" id="user-name" size="40" maxlength="20">
+                <button id="assessment">占う</button>
+                <div id="result-area"></div>
+                <div id="tweet-area"></div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/window.js"></script>
+<script src="js/photo.js"></script>
+<script src="js/omikuji.js"></script>
+</body>
+</html>

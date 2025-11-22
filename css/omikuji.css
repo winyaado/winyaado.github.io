@@ -1,0 +1,15 @@
+.omikuji {
+    background-color: #04a6eb;
+    color: #fdffff;
+    height: 100%;
+    overflow: auto;
+}
+    .omikuji button {
+      padding: 5px 20px;
+      background-color: #337ab7;
+      color: #fdffff;
+      border-style: none;
+    }
+    .omikuji input {
+      height: 20px;
+    }

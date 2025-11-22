@@ -1,0 +1,243 @@
+/* ================================
+   Windows 3.1 デスクトップ背景
+   ================================ */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #8C8C8C;
+    font-family: "MS UI Gothic", sans-serif;
+    user-select: none;
+}
+
+/* ================================
+   デスクトップ領域（アイコン自動整列）
+   ================================ */
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* 上→下に積む */
+    flex-wrap: wrap; /* 下まで行ったら右に折り返す */
+    align-content: flex-start;
+    gap: 20px; /* アイコン同士の余白 */
+
+    box-sizing: border-box;
+}
+
+/* ================================
+   デスクトップアイコン
+   ================================ */
+.icon {
+    width: 96px;
+    text-align: center;
+    cursor: default;
+}
+
+    /* 32×32 PNG */
+    .icon img {
+        width: 48px;
+        height: 48px;
+        display: block;
+        margin: 0 auto;
+        image-rendering: pixelated;
+    }
+
+    /* タイトル文字 */
+    .icon span {
+        display: block;
+        margin-top: 6px;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    /* 選択状態（青反転） */
+    .icon.selected span {
+        background-color: #000080;
+        color: white;
+        padding: 1px 2px;
+    }
+
+.icon-space {
+    width: 96px; /* アイコンと同じ幅 */
+    height: 96px; /* アイコンと同じ高さ */
+}
+/* --- ウインドウ基本 --- */
+.win32-window {
+    position: absolute;
+    background-color: #C0C0C0;
+    border: 3px solid black;
+    box-shadow: 4px 4px #404040;
+    display: none;
+    top: 40px;
+    left: 40px;
+}
+
+/* タイトルバーは高さ固定 */
+.title-bar {
+    height: 36px;
+    background: #000080;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    cursor: move;
+}
+
+.window-content {
+    background: white;
+    border: 3px inset #808080;
+    height: calc(100% - 36px - 6px);
+    /* 36px = タイトルバー
+       6px = content の上下 border 合計 */
+    overflow: auto;
+}
+
+/* --- ウインドウボタン --- */
+.window-buttons button {
+    width: 30px;
+    height: 27px;
+    margin-left: 5px;
+    border: 2px solid #fff;
+    background: #C0C0C0;
+    color: black;
+    font-size: 18px;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* プロフィール */
+.profile-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+/* 左側（アイコン） */
+.profile-left {
+    flex: 0 0 auto; /* 固定サイズ */
+}
+
+.profile-icon {
+    width: 200px; /* 好きなサイズに調整してね！ */
+    height: 200px;
+}
+
+/* 右側（テキスト） */
+.profile-right {
+    flex: 1;
+}
+
+    .profile-right h2 {
+        margin: 0;
+        font-size: 26px;
+    }
+
+    .profile-right p {
+        margin: 6px 0;
+        line-height: 1.4;
+    }
+
+    .profile-right .small {
+        font-size: 14px;
+        color: #333;
+    }
+
+/* Photo Viewer 全体（横並び） */
+.photo-content {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+}
+
+/* 左：大写真表示領域 */
+.photo-view {
+    flex: 3;
+    background: #fff;
+    border: 3px inset #808080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .photo-view img {
+        max-width: 100%;
+        max-height: 100%;
+        image-rendering: pixelated;
+    }
+
+/* 右：サムネイルリスト */
+.photo-list {
+    flex: 1;
+    overflow-y: scroll;
+    border: 3px inset #808080;
+    background: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* サムネイル */
+.thumb {
+    width: 100%;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+    .thumb:hover {
+        background: #000080;
+    }
+
+
+.works-list {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.work-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.work-icon {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.desc {
+    font-size: 14px;
+    color: #333;
+}
+
+.dos-contact {
+    background-color: black;
+    color: #00ff00;
+    font-family: "MS Gothic", "Courier New", monospace;
+    padding: 20px;
+    border: 3px inset #808080;
+    height: 100%;
+    overflow: auto;
+}
+
+    .dos-contact pre {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .dos-contact a {
+        color: #00ff00;
+    }
+    .dos-contact a:hover {
+        color: #66ff66;
+    }
+
+/* ユーティリティ */
+.center {
+    text-align: center;
+}
