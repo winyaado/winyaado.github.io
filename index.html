@@ -6,6 +6,7 @@
     <title>ぬこ ポートフォリオ</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/omikuji.css">
+    <link rel="stylesheet" href="css/poll.css">
 </head>
 
 <body>
@@ -41,6 +42,11 @@
         <div class="icon" data-window="omikuji">
             <img src="img/omikuji.png" alt="">
             <span>おみくじ</span>
+        </div>
+
+        <div class="icon" data-window="poll">
+            <img src="img/poll.png" alt="アンケート">
+            <span>アンケート</span>
         </div>
     </div>
 
@@ -249,8 +255,57 @@
         </div>
     </div>
 
-<script src="js/window.js"></script>
-<script src="js/photo.js"></script>
-<script src="js/omikuji.js"></script>
+    <!-- アンケート -->
+    <div class="win32-window" id="poll" style="width: 700px; height: 500px; top: 150px; left: 150px;">
+        <div class="title-bar">
+            <span class="title">アンケート</span>
+            <div class="window-buttons">
+                <button class="close">×</button>
+            </div>
+        </div>
+
+        <div class="window-content poll-content">
+            <h2 class="poll-question">あなたが好きなのは？</h2>
+
+            <div class="poll-container">
+                <!-- 左側：犬 -->
+                <div class="poll-option" id="option-dog">
+                    <div class="poll-img-wrapper">
+                        <img src="img/poll/dog.png" alt="犬">
+                    </div>
+                    <button class="poll-btn" data-vote="dog">犬が好き！</button>
+                    <div class="poll-result">
+                        <span class="vote-count" id="count-dog">0</span> 票
+                    </div>
+                </div>
+
+                <!-- 中央：グラフ -->
+                <div class="poll-graph-area">
+                    <div class="bar-container">
+                        <div class="bar bar-dog" id="bar-dog" style="height: 50%;"></div>
+                        <div class="bar bar-cat" id="bar-cat" style="height: 50%;"></div>
+                    </div>
+                </div>
+
+                <!-- 右側：猫 -->
+                <div class="poll-option" id="option-cat">
+                    <div class="poll-img-wrapper">
+                        <img src="img/poll/cat.png" alt="猫">
+                    </div>
+                    <button class="poll-btn" data-vote="cat">猫が好き！</button>
+                    <div class="poll-result">
+                        <span class="vote-count" id="count-cat">0</span> 票
+                    </div>
+                </div>
+            </div>
+
+            <div id="poll-message"></div>
+        </div>
+    </div>
+
+    <script src="js/window.js"></script>
+    <script src="js/photo.js"></script>
+    <script src="js/omikuji.js"></script>
+    <script src="js/poll.js"></script>
 </body>
 </html>
